@@ -1,3 +1,8 @@
+---
+slug: '/'
+sidebar_label: 'Operation'
+---
+
 # Operation
 
 Once the plugin has been registered with the OpCon system, it will be possible to define the link between the OpCon system and the AMT Batch Server. 
@@ -5,6 +10,19 @@ Once the link is defined and active, it will be possible to define Asysco AMT ta
 All definitions can only be performed using Solution Manager.
 
 ## Defining AsyscoAMT Batch Server connection
+
+Before defining a communications link an **AsyscoAMT** Batch User must first be created. 
+
+![Defining a Batch User](../static/img/batch-user.png)
+
+1.  Open Solution Manager.
+2.  From the Home page select **Library**
+3.  From the ***Security*** Menu select **Batch Users**.
+4.  Select **+Add** to add a new Batch User.
+5.  Select **AsyscoAMT** from the ***Select the target OS*** drop-down list.
+6.  Enter the the API User name that will be used to retrieve an authentication token in the **Identifier** field.
+7.  Enter the password of the defined API User in the **Password** and **Confirm** fields.
+8.  Select **Save**.
 
 The link between the OpCon System and the AsyscoAMT Batch Server is defined by adding a new AsyscoAMT Agent definition using Solution Manager.
 Items defined in red are required values.
@@ -14,14 +32,13 @@ Items defined in red are required values.
 1.  Open Solution Manager.
 2.  From the Home page select **Library**
 3.  From the ***Administration*** Menu select **Agents**.
-4.  Select **+ADD** to add a new agent definition.
+4.  Select **+Add** to add a new agent definition.
 5.  Fill in the agent details
     - Insert a unique name for the connection.
     - Select **AsyscoAMT** from the **Type** drop-down list.
     - Select **AsyscoAMT Settings**
     - In the **Batch Server URL** field enter the url of the AMT Batch Server including the port number (i.e. http://BatchServer:42000).
-    - In the **API User** field enter the API User name that will be used to retrieve an authentication token.
-    - In the **ApiUser Password** password field enter the password of the defined API User. Note that the password can be inserted into an encrypted token.
+    - Select the API User from the **Batch User** drop-down list.
 6.  Save the definition changes. 
 7.  Start the connection by selecting the **Change Communication Status** button and selecting **Enable Full Comm.**
 8.  Now select **Administrative Machine Information**
@@ -37,7 +54,7 @@ The AsyscoAMT Connection supports tow task types **Batch Job** and **Script**.
 1.  Open Solution Manager.
 2.  From the Home page select **Library**
 3.  From the ***Administration*** Menu select **Master Jobs**.
-4.  Select **+ADD** to add a new master job definition.
+4.  Select **+Add** to add a new master job definition.
 5.  Fill in the task details.
     - Select the **Schedule** name from the drop-down list.
     - In the **Name** field enter a unique name for the task within the schedule.

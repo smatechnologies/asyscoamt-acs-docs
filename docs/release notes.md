@@ -1,3 +1,8 @@
+---
+slug: '/'
+sidebar_label: 'Release Notes'
+---
+
 # Release Notes AsyscoAMT ACS Integration
 
 ## General

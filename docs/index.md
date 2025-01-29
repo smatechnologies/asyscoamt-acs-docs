@@ -1,6 +1,6 @@
 ---
 slug: '/'
-sidebar_label: 'Asysco AMT ACS Connector'
+sidebar_label: 'AsyscoAMT ACS Connector'
 ---
 
 # Asysco AMT ACS Plugin
@@ -9,11 +9,11 @@ The Asysco LION environment includes a basic scheduler that is used to schedule 
 
 The SMA OpCon Asysco AMT ACS Integration is a joint development between SMA and Asysco and has been designed to provide a tight connection between the SMA OpCon environment and the Asysco LION environment allowing OpCon to manage the scheduling of the batch processes.
 
-The ACS (Agentless Connector System) consists of a plugin that provides the integration with external applications. The plugin is detected by the SMA software and automatically registered within the OpCon system. Once registered with the OpCon system it is available for configuration and use. The ACS Asysco Amt plugin is loaded into the OpCon SMANetCom environment and communicates directly with the Asysco AMT Batch Server through the defined Rest-API.  
+The ACS (Agentless Connector System) consists of a plugin that provides the integration with external applications. The plugin is detected by the SMA software and automatically registered within the OpCon system. Once registered with the OpCon system it is available for configuration and use. The ACS AsyscoAmt plugin is loaded into the OpCon SMANetCom environment and communicates directly with the AsyscoAMT Batch Server through the defined Rest-API.  
 
 ![Overview](../static/img/overview.png)
 
-The above diagram shows the relationship between the plugin module and the opCon Components. The plugin is placed in the plugin directory where it is detected by the SMANetCom module and registered with the OpCOn system. Once registered the OpCon system it is possible to configure the link between the OpCon system and the Asysco AMT Batch server and then defines workflows and tasks. 
+The above diagram shows the relationship between the plugin module and the opCon Components. The plugin is placed in the plugin directory where it is detected by the SMANetCom module and registered with the OpCOn system. Once registered the OpCon system it is possible to configure the link between the OpCon system and the AsyscoAMT Batch server and then defines workflows and tasks. 
 
 All job definitions are defined in the AMT environment and performed by the AMT Batch Scheduler. OpCon is therefore scheduling predefined jobs and scripts.
 The OpCon AMT ACS inserts the job execution definitions into the OpCon database and then passes the request to the AMT Batch Server where it is placed on a Scheduler queue. 
