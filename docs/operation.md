@@ -39,6 +39,7 @@ Items defined in red are required values.
     - Select **AsyscoAMT Settings**
     - In the **Batch Server URL** field enter the url of the AMT Batch Server including the port number (i.e. http://BatchServer:42000).
     - Select the API User from the **Batch User** drop-down list.
+    - In the **Retain Log Files** field define the number of days to keep job log files (default is 30 days). 
 6.  Save the definition changes. 
 7.  Start the connection by selecting the **Change Communication Status** button and selecting **Enable Full Comm.**
 8.  Now select **Administrative Machine Information**
