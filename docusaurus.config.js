@@ -3,7 +3,7 @@ module.exports = {
   title: 'SMA Technologies Help',
   tagline: 'Template - Product Name',
   url: 'https://help.smatechnologies.com',
-  baseUrl: '/opcon/connectors/asyscoamt-acs',
+  baseUrl: '/opcon/connectors/asyscoamt-acs/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
