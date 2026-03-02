@@ -44,6 +44,9 @@ Items defined in red are required values.
 8.  Now select **Administrative Machine Information**
 9.  Set the **Allow Kill Job** to **True**.
 10. Save the definition changes. 
+11. Now select **Communication Settings**
+    Ensure that the **Requires XML Escape Sequences: User-Defined** field is set to **True**. 
+    If not change the field and save the definition changes.
 
 ## Defining tasks
 
