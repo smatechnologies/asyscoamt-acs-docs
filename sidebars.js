@@ -1,8 +1,10 @@
 module.exports = {
   mySidebar: [
     'index',
+    'overview',
     'installation',
     'operation',
-    'release notes',
+    'reference',
+    'release-notes',
   ],
 };

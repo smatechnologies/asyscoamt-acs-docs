@@ -1,204 +1,179 @@
 ---
+title: Operation
+description: "Configure the AsyscoAMT agent connection in OpCon and define Batch Job and Script jobs to submit to the AMT Batch Server."
+tags:
+  - Procedural
+  - System Administrator
+  - Automation Engineer
+  - Agents
 sidebar_label: 'Operation'
 ---
 
 # Operation
 
-Once the plugin has been registered with the OpCon system, it will be possible to define the link between the OpCon system and the AMT Batch Server. 
-Once the link is defined and active, it will be possible to define Asysco AMT tasks that are submitted to the AMT Batch Server through the Rest-API. 
-All definitions can only be performed using Solution Manager.
+**Theme:** Configure | **Audience:** System Administrator, Automation Engineer
+
+## What is it?
+
+Once the connector has been registered with the OpCon system, you can define the link between the OpCon system and the AMT Batch Server. Once the link is defined and active, you can define Asysco AMT tasks that are submitted to the AMT Batch Server through the REST-API. All definitions can only be performed using Solution Manager.
+
+Use this page when:
+
+- You are setting up the link between OpCon and an AsyscoAMT Batch Server for the first time.
+- You need to define AMT batch jobs and scripts as OpCon-managed tasks with scheduling and dependency control.
+- You want to monitor AMT job status and retrieve execution logs from within OpCon.
 
 ## Defining AsyscoAMT Batch Server connection
 
-Before defining a communications link an **AsyscoAMT** Batch User must first be created. 
+Before defining a communications link, an **AsyscoAMT** Batch User must first be created.
 
 ![Defining a Batch User](../static/img/batch-user.png)
 
-1.  Open Solution Manager.
-2.  From the Home page select **Library**
-3.  From the ***Security*** Menu select **Batch Users**.
-4.  Select **+Add** to add a new Batch User.
-5.  Select **AsyscoAMT** from the ***Select the target OS*** drop-down list.
-6.  Enter the the API User name that will be used to retrieve an authentication token in the **Identifier** field.
-7.  Enter the password of the defined API User in the **Password** and **Confirm** fields.
-8.  Select **Save**.
+To add an AsyscoAMT Batch User, complete the following steps:
 
-The link between the OpCon System and the AsyscoAMT Batch Server is defined by adding a new AsyscoAMT Agent definition using Solution Manager.
-Items defined in red are required values.
+1. Open Solution Manager.
+2. From the **Home** page, select **Library**.
+3. From the **Security** menu, select **Batch Users**.
+4. Select the **+Add** button.
+5. Select **AsyscoAMT** from the **Select the target OS** list.
+6. In the **Identifier** field, enter the API user name used to retrieve an authentication token.
+7. In the **Password** field, enter the password.
+8. In the **Confirm** field, enter the password again.
+9. Select the **Save** button. The Batch User is saved.
+
+The link between the OpCon system and the AsyscoAMT Batch Server is defined by adding a new AsyscoAMT agent definition using Solution Manager.
+
+**NOTE:** Fields marked in red are required.
 
 ![Defining a Connection](../static/img/defining-connection.png)
 
-1.  Open Solution Manager.
-2.  From the Home page select **Library**
-3.  From the ***Administration*** Menu select **Agents**.
-4.  Select **+Add** to add a new agent definition.
-5.  Fill in the agent details
-    - Insert a unique name for the connection.
-    - Select **AsyscoAMT** from the **Type** drop-down list.
-    - Select **AsyscoAMT Settings**
-    - In the **Batch Server URL** field enter the url of the AMT Batch Server including the port number (i.e. http://BatchServer:42000).
-    - Select the API User from the **Batch User** drop-down list.
-    - In the **Retain Log Files** field define the number of days to keep job log files (default is 30 days). 
-6.  Save the definition changes. 
-7.  Start the connection by selecting the **Change Communication Status** button and selecting **Enable Full Comm.**
-8.  Now select **Administrative Machine Information**
-9.  Set the **Allow Kill Job** to **True**.
-10. Save the definition changes. 
-11. Now select **Communication Settings**
-    Ensure that the **Requires XML Escape Sequences: User-Defined** field is set to **True**. 
-    If not change the field and save the definition changes.
+To define an AsyscoAMT agent connection, complete the following steps:
+
+1. Open Solution Manager.
+2. From the **Home** page, select **Library**.
+3. From the **Administration** menu, select **Agents**.
+4. Select the **+Add** button.
+5. In the **Name** field, enter a unique name for the connection.
+6. Select **AsyscoAMT** from the **Type** list.
+7. Select **AsyscoAMT Settings**.
+8. In the **Batch Server URL** field, enter the URL of the AMT Batch Server including the port number (for example, `http://BatchServer:42000`).
+9. Select the API user from the **Batch User** list.
+10. In the **Retain Log Files** field, enter the number of days to keep job log files. The default is 30 days.
+11. Select the **Save** button.
+12. Select the **Change Communication Status** button and select **Enable Full Comm.**
+13. Select **Administrative Machine Information**.
+14. Set the **Allow Kill Job** field to **True**.
+15. Select the **Save** button.
+16. Select **Communication Settings**.
+17. Confirm the **Requires XML Escape Sequences: User-Defined** field is set to **True**. If it is not, update the field and select the **Save** button.
+
+The agent connection to the AsyscoAMT Batch Server is active.
 
 ## Defining tasks
 
-The AsyscoAMT Connection supports tow task types **Batch Job** and **Script**.
+The AsyscoAMT Connection supports two task types: **Batch Job** and **Script**.
 
 ![Defining a Master Job](../static/img/master-job.png)
 
-1.  Open Solution Manager.
-2.  From the Home page select **Library**
-3.  From the ***Administration*** Menu select **Master Jobs**.
-4.  Select **+Add** to add a new master job definition.
-5.  Fill in the task details.
-    - Select the **Schedule** name from the drop-down list.
-    - In the **Name** field enter a unique name for the task within the schedule.
-    - Select **AsyscoAMT** from the **Job Type** drop-down list.
-    - Select the task type from the **Task Type** drop-down list.
+To create an AsyscoAMT job, complete the following steps:
 
-Enter details for Task Type **Batch Job**. 
-Items defined in red are required values.
+1. Open Solution Manager.
+2. From the **Home** page, select **Library**.
+3. From the **Administration** menu, select **Master Jobs**.
+4. Select the **+Add** button.
+5. Select the schedule name from the **Schedule** list.
+6. In the **Name** field, enter a unique name for the job within the schedule.
+7. Select **AsyscoAMT** from the **Job Type** list.
+8. Select the task type from the **Task Type** list.
+
+### Batch job
+
+**NOTE:** Fields marked in red are required.
 
 ![Batch Job](../static/img/batch-job.png)
 
-1.  Select the **Task Details** button.
-2.  In the **Integration Selection** section, select the primary integration which is an AsyscoAMT connection previously defined.
-3.  In the **Application Name** field enter the AMT Application Name. Most implementations have a single application installed with the AMT Environment.
-4.  The **Submit User** field defines the name of the user that submits the request to the AMT Batch Server. It contains a default value of **BATCH** which should not be changed.
-5.  The **User** field is an optional field that defines the user that the AMT Task will execute under within the AMT Batch environment (also known as RunAS). If not defined the Application user will be used.
-6.  The **Station** field defines who submitted the request to the AMT Batch Server. It contains a default value of **OPCON** which should not be changed.
-5.  The **Queue Name** field is an optional field that defines which queue within the AMT Batch server the task should be placed on. If not defined the AMT Batch server default queue will be used.
-6.  In the **Job Name** field enter the name of the task defined in the Asysco AMT Batch server to execute.
-7.  In the **Task Values** field enter Task values used to modify, override, or elaborate existing task attributes that apply to the job.
-    - for each task value definition select **+ Add Item** and enter the value. 
+To configure the Batch Job task type, complete the following steps:
 
-Enter details for Task Type **Script**. 
-Items defined in red are required values.
+1. Select the **Task Details** button.
+2. In the **Integration Selection** section, select the primary integration, which is an AsyscoAMT connection previously defined.
+3. In the **Application Name** field, enter the AMT Application Name. Most implementations have a single application installed with the AMT environment.
+4. Confirm the **Submit User** field is set to **BATCH**. Do not change this default value.
+5. (Optional) In the **User** field, enter the user that the AMT task will run as within the AMT Batch environment (RunAS). If not defined, the Application user is used.
+6. Confirm the **Station** field is set to **OPCON**. Do not change this default value.
+7. (Optional) In the **Queue Name** field, enter the queue within the AMT Batch Server where the task should be placed. If not defined, the AMT Batch Server default queue is used.
+8. In the **Job Name** field, enter the name of the task defined in the Asysco AMT Batch Server to execute.
+9. In the **Task Values** field, enter task values used to modify, override, or elaborate existing task attributes that apply to the job. For each task value, select the **+ Add Item** button and enter the value.
+
+The job is saved and ready for scheduling.
+
+### Script
+
+**NOTE:** Fields marked in red are required.
 
 ![Script](../static/img/script.png)
 
-1.  Select the **Task Details** button.
-2.  In the **Integration Selection** section, select the primary integration which is an AsyscoAMT connection previously defined.
-3.  In the **Application Name** field enter the AMT Application Name. Most implementations have a single application installed with the AMT Environment.
-4.  The **Submit User** field defines the name of the user that submits the request to the AMT Batch Server. It contains a default value of **BATCH** which should not be changed.
-5.  The **User** field is an optional field that defines the user that the AMT Task will execute under within the AMT Batch environment (also known as RunAS). If not defined the Application user will be used.
-6.  The **Station** field defines who submitted the request to the AMT Batch Server. It contains a default value of **OPCON** which should not be changed.
-5.  The **Queue Name** field is an optional field that defines which queue within the AMT Batch server the task should be placed on. If not defined the AMT Batch server default queue will be used.
-6.  In the **Script Name** field enter the name of the script to execute on the Asysco AMT Batch Server.
-7.  In the **Script Parameters** field enter parameters to be passed to the task. Values are defined as name=value pairs.
-    - for each parameter definition select **+ Add Item** and enter the parameter. 
+To configure the Script task type, complete the following steps:
 
-## Failure Criteria
-The Asysco AMT ACS integration returns a success or failure completion status. The actual Asysco AMT Completion code is displayed in the JobLog.
-Error information about a task execution will also be displayed in the JobLog.
+1. Select the **Task Details** button.
+2. In the **Integration Selection** section, select the primary integration, which is an AsyscoAMT connection previously defined.
+3. In the **Application Name** field, enter the AMT Application Name. Most implementations have a single application installed with the AMT environment.
+4. Confirm the **Submit User** field is set to **BATCH**. Do not change this default value.
+5. (Optional) In the **User** field, enter the user that the AMT task will run as within the AMT Batch environment (RunAS). If not defined, the Application user is used.
+6. Confirm the **Station** field is set to **OPCON**. Do not change this default value.
+7. (Optional) In the **Queue Name** field, enter the queue within the AMT Batch Server where the task should be placed. If not defined, the AMT Batch Server default queue is used.
+8. In the **Script Name** field, enter the name of the script to execute on the Asysco AMT Batch Server.
+9. In the **Script Parameters** field, enter parameters to be passed to the task. Values are defined as name=value pairs. For each parameter, select the **+ Add Item** button and enter the parameter.
 
-```
-Completion Codes
+The job is saved and ready for scheduling.
 
-0	IDLE                   Job is idle.
-1	QUEUED                 Job is queued for future start in current timeframe.
-2	RUNNING                Job was started manually or by the scheduler.
-3	KILLED                 Job was terminated by a 'kill' command.
-4	DONE                   Job completed normally.
-5	SUSPENDED              Queued job has not started on time.
-6	SKIPPED_BY_OPS         Suspended Job has been skipped by control center.
-7	RUN_MANUAL             Job was started by control center.
-8	RUN_FORCED             Forced start manual, start this job even when job server halted.
-9	RUN_DEBUG              When a report is started from Visual Studio.
-10	DEL_QUEUE              Job is deleted from queue.
-11	ERROR                  Job Ended in Error. When executing a script and the script does not exist, an error code of 11 will be returned with a description of ‘File not found’.
-12	ABORTED                The Job was aborted on purpose in the business-logic.
-13	WAIT FOR FILE          Waiting for a file.
-14	WAIT FOR INPUT REQUEST Waiting for Request.
-15	WAIT FOR JOB           Waiting for another job to finish.
-16	WAIT FOR REPORT        Waiting for a report to finish, for future use.
-18	RECOVER_CP             This job (report) is a request to recover from a saved critical point.
-19	UNDEFINED              State is undefined.
-20	WAIT_FOR QUEUE         Waiting for queue start time.
-21	WAIT_FOR_DEBUGGER      Waiting for a LION Debugger to start debug session for the job.
-22	ABORTED_WITH_RECOVER   Aborted with recover.
-23	WEB_SERVER_ERROR
-24	AUTHENTICATION_ERROR
-99	INVALID AMT USER       When executing an AMT script with a named AMT user and the user is invalid.
+## Configuration options
 
-```
-## Kill Job
-The Asysco AMT ACS integration supports the ability to terminate a task within the Asysco AMT Batch Server. When the **Kill** task status is selected within OpCon an immediate kill request for the task is submitted to the AsyscoAMT Batch server.
+### Batch User settings
 
-## Job Log
-When a task is executing within the AMT Environment, the job log is written to the database. This includes the information about the task as well as any children of the task. 
-When the task completes the ACS Integration retrieves the information from the database and adds it to the job log of the OpCon job making it available via the JORS System.
-It should be noted that JobLogs for Asysco AMT ACS integration tasks can only be viewed from within the Solution Manager environment.
+| Setting | What It Does | Default | Notes |
+|---|---|---|---|
+| Target OS | OS type for the batch user | — | Must be set to **AsyscoAMT** |
+| Identifier | API user name used to retrieve an authentication token | — | Required |
+| Password | Password for the API user | — | Required; stored encrypted |
 
-```
----------------------------------------------------------------------------
-Job Information -----------------------------------------------------------
-Server          : http://10.1.29.5:9001
-Application     : DEMO2
-Submit User     : BATCH
-Station         : OPCON
-Queue Name      : 
-Batch Job       : REPORTTEST01
-Parameters      :
----------------------------------------------------------------------------
-Completion Code : DONE
----------------------------------------------------------------------------
-Job Log -------------------------------------------------------------------
-"Started Rev: 1.3 AMT: 8.0.24223.0. Params: LOADINBATCHCONTROLLER /R:4280 /USEWORKINGDIR"
-"Report test 01 is started"
-"Report test 01 user BATCH"
-"Report test 01 Value param []"
-"Report test 01 is running 0 seconds"
-"Report test 01 is running 10 seconds"
-"Report test 01 is running 20 seconds"
-"Report test 01 test is ended"
-"Report execution time: 00:00:30:229"
-"Done"
----------------------------------------------------------------------------
+### Agent connection settings
 
-```
+| Setting | What It Does | Default | Notes |
+|---|---|---|---|
+| Name | Unique identifier for the connection within OpCon | — | Required |
+| Type | Agent type selector | — | Must be set to **AsyscoAMT** |
+| Batch Server URL | URL of the AsyscoAMT Batch Server including the port number | — | Required; for example, `http://BatchServer:42000` |
+| Batch User | API user credential for authenticating with the AMT Batch Server | — | Required |
+| Retain Log Files | Number of days to keep job log files | 30 | — |
+| Allow Kill Job | Enables the ability to terminate a running task from OpCon | — | Must be set to **True** |
+| Requires XML Escape Sequences | Ensures special characters in job parameters are properly escaped | — | Must be set to **True** |
 
-```
----------------------------------------------------------------------------
-Job Information -----------------------------------------------------------
-Server          : http://10.1.29.5:9001
-Application     : DEMO2
-Submit User     : BATCH
-Station         : OPCON
-Queue Name      : 
-Script Job      : F:\Amt\Scripts\DEMO2\RUN_FILENAMETEST.ps1
-Parameters      :
----------------------------------------------------------------------------
-Completion Code : ERROR
----------------------------------------------------------------------------
-Job Log -------------------------------------------------------------------
-"Error starting job []"
-"[An error occurred trying to start process 'pwsh' with working directory 'F:\\AMT\\SCRIPTS\\DEMO2'. The system cannot find the file specified.]"
----------------------------------------------------------------------------
+### Common job settings (Batch Job and Script)
 
-```
+| Setting | What It Does | Default | Notes |
+|---|---|---|---|
+| Integration Selection | Selects the AsyscoAMT agent connection to use | — | Required |
+| Application Name | AMT Application Name for the target environment | — | Required |
+| Submit User | User that submits the job to the AMT Batch Server | BATCH | Do not change this value |
+| User | AMT user the task runs as within the AMT Batch environment (RunAS) | Application user | Optional |
+| Station | Identifies the submitting system within AMT | OPCON | Do not change this value |
+| Queue Name | AMT Batch Server queue where the task is placed | AMT default queue | Optional |
 
-```
----------------------------------------------------------------------------
-Job Information -----------------------------------------------------------
-Server          : http://10.1.29.5:9001
-Application     : DEMO2
-Submit User     : BATCH
-Station         : OPCON
-Queue Name      : 
-Batch Job       : LONGRUNNINGREPORT
-Parameters      :
----------------------------------------------------------------------------
-Completion Code : KILLED
----------------------------------------------------------------------------
-Job Log -------------------------------------------------------------------
----------------------------------------------------------------------------
-```
+### Batch Job settings
+
+| Setting | What It Does | Default | Notes |
+|---|---|---|---|
+| Job Name | Name of the task defined in the AMT Batch Server to execute | — | Required |
+| Task Values | Name=value pairs that modify, override, or elaborate existing task attributes | — | Optional; add one value per row |
+
+### Script settings
+
+| Setting | What It Does | Default | Notes |
+|---|---|---|---|
+| Script Name | Name of the script to execute on the AMT Batch Server | — | Required |
+| Script Parameters | Parameters passed to the script as name=value pairs | — | Optional; add one parameter per row |
+
+**Related topics:**
+
+- [Reference](./reference.md)
+- [Overview](./overview.md)
