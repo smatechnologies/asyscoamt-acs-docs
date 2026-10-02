@@ -21,7 +21,7 @@ Use this page when:
 
 - You are setting up the link between OpCon and an AsyscoAMT Batch Server for the first time.
 - You need to define AMT batch jobs and scripts as OpCon-managed tasks with scheduling and dependency control.
-- You want to monitor AMT job status and retrieve execution logs from within OpCon.
+- You want to monitor AMT job status and retrieve job logs from within OpCon.
 
 ## Defining AsyscoAMT Batch Server connection
 
@@ -98,11 +98,11 @@ To configure the Batch Job task type, complete the following steps:
 2. In the **Integration Selection** section, select the primary integration, which is an AsyscoAMT connection previously defined.
 3. In the **Application Name** field, enter the AMT Application Name. Most implementations have a single application installed with the AMT environment.
 4. Confirm the **Submit User** field is set to **BATCH**. Do not change this default value.
-5. (Optional) In the **User** field, enter the user that the AMT task will run as within the AMT Batch environment (RunAS). If not defined, the Application user is used.
+5. (Optional) In the **User** field, enter the user that the AMT task runs as within the AMT Batch environment (RunAS). If not defined, the Application user is used.
 6. Confirm the **Station** field is set to **OPCON**. Do not change this default value.
 7. (Optional) In the **Queue Name** field, enter the queue within the AMT Batch Server where the task should be placed. If not defined, the AMT Batch Server default queue is used.
-8. In the **Job Name** field, enter the name of the task defined in the Asysco AMT Batch Server to execute.
-9. In the **Task Values** field, enter task values used to modify, override, or elaborate existing task attributes that apply to the job. For each task value, select the **+ Add Item** button and enter the value.
+8. In the **Job Name** field, enter the name of the task defined in the Asysco AMT Batch Server to run.
+9. In the **Task Values** field, enter task values used to modify, override, or elaborate existing task attributes that apply to the job. For each task value, select the **+ Add Item** button and enter the value. Up to 20 task values can be added.
 
 The job is saved and ready for scheduling.
 
@@ -118,11 +118,11 @@ To configure the Script task type, complete the following steps:
 2. In the **Integration Selection** section, select the primary integration, which is an AsyscoAMT connection previously defined.
 3. In the **Application Name** field, enter the AMT Application Name. Most implementations have a single application installed with the AMT environment.
 4. Confirm the **Submit User** field is set to **BATCH**. Do not change this default value.
-5. (Optional) In the **User** field, enter the user that the AMT task will run as within the AMT Batch environment (RunAS). If not defined, the Application user is used.
+5. (Optional) In the **User** field, enter the user that the AMT task runs as within the AMT Batch environment (RunAS). If not defined, the Application user is used.
 6. Confirm the **Station** field is set to **OPCON**. Do not change this default value.
 7. (Optional) In the **Queue Name** field, enter the queue within the AMT Batch Server where the task should be placed. If not defined, the AMT Batch Server default queue is used.
-8. In the **Script Name** field, enter the name of the script to execute on the Asysco AMT Batch Server.
-9. In the **Script Parameters** field, enter parameters to be passed to the task. Values are defined as name=value pairs. For each parameter, select the **+ Add Item** button and enter the parameter.
+8. In the **Script Name** field, enter the name of the script to run on the Asysco AMT Batch Server.
+9. In the **Script Parameters** field, enter parameters to be passed to the task. Values are defined as name=value pairs. For each parameter, select the **+ Add Item** button and enter the parameter. Up to 20 parameters can be added.
 
 The job is saved and ready for scheduling.
 
@@ -163,15 +163,15 @@ The job is saved and ready for scheduling.
 
 | Setting | What It Does | Default | Notes |
 |---|---|---|---|
-| Job Name | Name of the task defined in the AMT Batch Server to execute | — | Required |
-| Task Values | Name=value pairs that modify, override, or elaborate existing task attributes | — | Optional; add one value per row |
+| Job Name | Name of the task defined in the AMT Batch Server to run | — | Required |
+| Task Values | Name=value pairs that modify, override, or elaborate existing task attributes | — | Optional; up to 20, one value per row |
 
 ### Script settings
 
 | Setting | What It Does | Default | Notes |
 |---|---|---|---|
-| Script Name | Name of the script to execute on the AMT Batch Server | — | Required |
-| Script Parameters | Parameters passed to the script as name=value pairs | — | Optional; add one parameter per row |
+| Script Name | Name of the script to run on the AMT Batch Server | — | Required |
+| Script Parameters | Parameters passed to the script as name=value pairs | — | Optional; up to 20, one parameter per row |
 
 **Related topics:**
 
