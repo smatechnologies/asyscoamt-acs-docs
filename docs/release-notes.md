@@ -19,6 +19,6 @@ tags:
 
 2025 July
 
-### What's new
+#### What's new
 
 :eight_spoked_asterisk: Initial release. There are no files to create, job subtypes to add, or Java software to install. The connector contains the dynamic screen definitions using JSON schemas that display the connection and task definition requirements. All information required for the integration is contained in the `sma.acs.AsyscoAMT` connector.

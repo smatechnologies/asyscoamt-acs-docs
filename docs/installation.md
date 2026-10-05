@@ -31,7 +31,9 @@ To install the AsyscoAMT ACS connector, complete the following steps:
    - For an OpCon server: copy to `ProgramData\SAM\plugins`
    - For a Relay component: copy to `ProgramData\Relay\plugins`
 
-**NOTE:** If the files already exist in the `plugins` directory, stop the service before replacing the files.
+4. Restart the services so the ACS component detects the connector: **SMA OpCon Service Manager** and **SMA OpCon RestAPI** on an OpCon server, or **SMA OpCon Relay** on a Relay component.
+
+**NOTE:** If the files already exist in the `plugins` directory, stop the same services before replacing the files.
 
 The ACS component within SMANetCom or Relay detects the AsyscoAMT connector and registers the integration with OpCon. Once registered with OpCon, you can configure the AsyscoAMT connection and define jobs.
 

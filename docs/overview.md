@@ -23,13 +23,13 @@ Use the AsyscoAMT ACS connector when:
 
 - You need to schedule and monitor AsyscoAMT batch processes from within OpCon, replacing manual AMT scheduling with dependency-aware automation.
 - You need to submit AMT batch jobs and scripts on demand or on a schedule without logging into the AMT Batch Server directly.
-- You want to retrieve AMT job execution logs through JORS without accessing the AMT environment separately.
+- You want to retrieve AMT job logs through JORS without accessing the AMT environment separately.
 
 ![Overview](../static/img/overview.png)
 
 The diagram above shows the relationship between the connector module and the OpCon components. The connector is placed in the plugins directory where it is detected by the SMANetCom module and registered with the OpCon system. Once registered with the OpCon system, you can configure the link between the OpCon system and the AsyscoAMT Batch Server and define schedules and jobs.
 
-Job definitions are stored in the AMT environment and performed by the AMT Batch Scheduler. OpCon schedules predefined jobs and scripts. The OpCon AMT ACS inserts the job execution definitions into the OpCon database and then passes the request to the AMT Batch Server where it is placed on a scheduler queue. The OpCon AMT ACS then monitors the status of the job being executed by the AMT Batch Scheduler. Once the job is completed, the OpCon AMT ACS retrieves the job log information, making it available via JORS.
+Job definitions are stored in the AMT environment and run by the AMT Batch Scheduler. OpCon schedules predefined jobs and scripts. When an AsyscoAMT job starts, the connector logs on to the AMT Batch Server and submits the request, which the server places on a scheduler queue. The connector then polls the status of the job while the AMT Batch Scheduler runs it. When the job ends, the connector retrieves the job's messages into the OpCon job log, making them available via JORS.
 
 ## AMTOpCon interface
 
@@ -41,7 +41,7 @@ The AMTOpCon Interface is a RESTful web services implementation that provides th
 
 ## Glossary
 
-**AMT Batch Server** — The Asysco LION component that receives, queues, and executes batch jobs and scripts. The AsyscoAMT ACS connector communicates with the server through its REST-API.
+**AMT Batch Server** — The Asysco LION component that receives, queues, and runs batch jobs and scripts. The AsyscoAMT ACS connector communicates with the server through its REST-API.
 
 **ACS (Agentless Connector System)** — The OpCon framework for integrating external applications without installing an agent on the target system. Connectors are loaded into SMANetCom or Relay and registered automatically with OpCon.
 
